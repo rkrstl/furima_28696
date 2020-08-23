@@ -14,7 +14,7 @@
 |e-mail	         |string	|null:false   |
 
 ##Association
-has_many :item
+has_many :items
 has_many :comments dependent: :destroy
 has_many :deliver_addresses dependent: :destroy
 
@@ -27,11 +27,6 @@ has_many :deliver_addresses dependent: :destroy
 |user_id        |string    |null:false,foreign_key:true     |
 | name          |string    |null:false                      |
 |text           |text      |null:false                      |
-|seller_user_id |references|null:false,foreign_key:true     |
-|category       |string    |null:false                      |
-|condition      |string    |null:false                      |
-|shipping_burden|string    |null:false                      |
-|duration       |string    |null:false                      |
 |price          |integer   |null:false                      |
 
 
@@ -47,14 +42,14 @@ has_many: comments dependent: :destroy
 |Column     | Type     |Options                       |
 |-----------|----------|-----------------------------|
 |user       |references|null:false,foreign_key:true  |
-|postal-code|integer   |null:false                   |
+|postal-code|string    |null:false                   |
 |city       |string    |null:false                   |
 |address1   |string    |null:false                   |
 |address2   |string    |                             |
-|telephone  |string   |null:false                   |
+|telephone  |string    |null:false                   |
 
 #Association
-belongs_to: user
+belongs_to: products
 
 
 ##commentsテーブル
@@ -68,4 +63,13 @@ belongs_to: user
 belongs_to:user
 belongs_to:item
 
+##ordersテーブル
+|Columns   |Type        |Options                    |
+|----------|------------|---------------------------|
+|user_id   |references  |null:false,foreign_key:true|
+|item_id   |references  |null:false,foreign_key:true|
 
+
+#Associaion
+belongs_to :user
+belongs_to :item
