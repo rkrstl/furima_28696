@@ -14,7 +14,7 @@
 |e-mail	         |string	|null:false   |
 
 ##Association
-has_many :items
+has_many :items dependent: :destroy
 has_many :comments dependent: :destroy
 has_many :deliver_addresses dependent: :destroy
 
@@ -22,12 +22,17 @@ has_many :deliver_addresses dependent: :destroy
 
 ##itemsテーブル
 
-|Column         | Type     | Options                        |
-|---------------|--------- |--------------------------------|
-|user_id        |string    |null:false,foreign_key:true     |
-| name          |string    |null:false                      |
-|text           |text      |null:false                      |
-|price          |integer   |null:false                      |
+|Column                                | Type     | Options                        |
+|--------------------------------------|--------- |--------------------------------|
+|user_id                               |string    |null:false,foreign_key:true     |
+| name                                 |string    |null:false                      |
+|text                                  |text      |null:false                      |
+|price                                 |integer   |null:false                      |
+| scheduled_delivery_id(active_hash)   | integer  | null: false                    |
+| shipping_fee_status_id(active_hash)  | integer  | null: false                    |
+| prefecture_id(active_hash)           | integer  | null: false                    |
+| sales_status_id(active_hash)         | integer  | null: false                    |
+| category_id(active_hash)             | integer  | null: false                    |
 
 
 #Association
@@ -49,7 +54,7 @@ has_many: comments dependent: :destroy
 |telephone  |string    |null:false                   |
 
 #Association
-belongs_to: products
+has_one:orders 
 
 
 ##commentsテーブル
@@ -60,8 +65,8 @@ belongs_to: products
 |text          |text       |null:false                 |
 
 #Association
-belongs_to:user
-belongs_to:item
+belongs_to:user 
+belongs_to:item 
 
 ##ordersテーブル
 |Columns   |Type        |Options                    |
@@ -70,6 +75,7 @@ belongs_to:item
 |item_id   |references  |null:false,foreign_key:true|
 
 
-#Associaion
+#Association
 belongs_to :user
 belongs_to :item
+belongs_to :deliver_address
