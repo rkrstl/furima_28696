@@ -46,7 +46,6 @@ has_many: comments
 
 |Column                        | Type     |Options                      |
 |------------------------------|----------|-----------------------------|
-|user                          |references|null:false, foreign_key:true |
 |order                         |references|nill:false,foreign_key:true  |
 |prefecture_id(active_hash)    | integer  | null: false                 |
 |postal-code                   |string    |null:false                   |
