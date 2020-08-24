@@ -17,6 +17,7 @@
 has_many :items dependent: :destroy
 has_many :comments dependent: :destroy
 has_many :deliver_addresses dependent: :destroy
+has_many :orders dependent: :destroy
 
 
 
@@ -24,7 +25,7 @@ has_many :deliver_addresses dependent: :destroy
 
 |Column                                | Type     | Options                        |
 |--------------------------------------|--------- |--------------------------------|
-|user_id                               |string    |null:false,foreign_key:true     |
+|user                                  |references|null:false,foreign_key:true     |
 | name                                 |string    |null:false                      |
 |text                                  |text      |null:false                      |
 |price                                 |integer   |null:false                      |
@@ -37,7 +38,7 @@ has_many :deliver_addresses dependent: :destroy
 
 #Association
 belongs_to: user
-has_one: :deliver_addresses dependent: :destroy
+has_one: :deliver_address dependent: :destroy
 has_many: comments dependent: :destroy
 
 
@@ -54,14 +55,14 @@ has_many: comments dependent: :destroy
 |telephone  |string    |null:false                   |
 
 #Association
-has_one:orders 
+has_one:order
 
 
 ##commentsテーブル
 |Column        | Type      |Options                    |
-|-----------   |-----------|---------------------------|
-|user_id       |references |null:false,foreign_key:true|
-|products_id   |references |null:false,foreign_key:true|
+|--------------|-----------|---------------------------|
+|user          |references |null:false,foreign_key:true|
+|product       |references |null:false,foreign_key:true|
 |text          |text       |null:false                 |
 
 #Association
@@ -71,11 +72,11 @@ belongs_to:item
 ##ordersテーブル
 |Columns   |Type        |Options                    |
 |----------|------------|---------------------------|
-|user_id   |references  |null:false,foreign_key:true|
-|item_id   |references  |null:false,foreign_key:true|
+|user      |references  |null:false,foreign_key:true|
+|item      |references  |null:false,foreign_key:true|
 
 
 #Association
 belongs_to :user
 belongs_to :item
-belongs_to :deliver_address
+has one     :deliver_address
