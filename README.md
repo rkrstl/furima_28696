@@ -14,10 +14,9 @@
 |e-mail	         |string	|null:false   |
 
 ##Association
-has_many :items dependent: :destroy
-has_many :comments dependent: :destroy
-has_many :deliver_addresses dependent: :destroy
-has_many :orders dependent: :destroy
+has_many :items 
+has_many :comments 
+has_many :orders 
 
 
 
@@ -38,31 +37,34 @@ has_many :orders dependent: :destroy
 
 #Association
 belongs_to: user
-has_one: :deliver_address dependent: :destroy
-has_many: comments dependent: :destroy
+has_one :order
+has_many: comments 
 
 
 
 ##deliver_addressesテーブル
 
-|Column     | Type     |Options                       |
-|-----------|----------|-----------------------------|
-|user       |references|null:false,foreign_key:true  |
-|postal-code|string    |null:false                   |
-|city       |string    |null:false                   |
-|address1   |string    |null:false                   |
-|address2   |string    |                             |
-|telephone  |string    |null:false                   |
+|Column                        | Type     |Options                      |
+|------------------------------|----------|-----------------------------|
+|user                          |references|null:false, foreign_key:true |
+|order                         |references|nill:false,foreign_key:true  |
+|prefecture_id(active_hash)    | integer  | null: false                 |
+|postal-code                   |string    |null:false                   |
+|city                          |string    |null:false                   |
+|address1                      |string    |null:false                   | 
+|address2                      |string    |                             |
+|telephone                     |string    |null:false                   |
 
 #Association
-has_one:order
+belongs_to:order
+
 
 
 ##commentsテーブル
 |Column        | Type      |Options                    |
 |--------------|-----------|---------------------------|
 |user          |references |null:false,foreign_key:true|
-|product       |references |null:false,foreign_key:true|
+|item          |references |null:false,foreign_key:true|
 |text          |text       |null:false                 |
 
 #Association
