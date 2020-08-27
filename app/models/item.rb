@@ -21,12 +21,12 @@ class Item < ApplicationRecord
 # - 発送元の地域についての情報が必須であること
   validates :prefecture_id,presence: true
 # - 発送までの日数についての情報が必須であること
-   validates :scheduled_delivery_id
+   validates :scheduled_delivery_id,presence: true
 
 # - 価格についての情報が必須であること
-　　#半角数字であること
+# 　　半角数字であること
   validates :price,presence:true,format:{with:/\A[0-9]+\z/}
-  
+
 # - 価格の範囲が、¥300~¥9,999,999の間であること
  
   
