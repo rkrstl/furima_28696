@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+        has_many :items
+        has_many :comments
+        has_many :orders
+
+
+
         #  パスワードが必須であること
         #  パスワードは6文字以上であること
         #  パスワードは半角英数字混合であること
