@@ -21,13 +21,13 @@ belongs_to_active_hash :category
   validates :text,presence: true
 
 # - カテゴリーの情報が必須であること
-  validates :category,presence: true,numericality: { other_than: 1 } 
+  validates :category_id,presence: true,numericality: { other_than: 1 } 
 
 # - 商品の状態についての情報が必須であること
-  validates :sales_status,presence: true,numericality: { other_than: 1 } 
+  validates :sales_status_id,presence: true,numericality: { other_than: 1 } 
 
 # - 配送料の負担についての情報が必須であること
-  validates :shipping_fee_status,presence: true,numericality: { other_than: 1 } 
+  validates :shipping_fee_status_id,presence: true,numericality: { other_than: 1 } 
 
 # - 発送元の地域についての情報が必須であること
   validates :prefecture_id,presence: true
@@ -37,7 +37,7 @@ belongs_to_active_hash :category
 # - 価格についての情報が必須であること
 # 　　半角数字であること
 # - 価格の範囲が、¥300~¥9,999,999の間であること
-  validates :price,presence:true,format:{with:/\A[0-9]+\z/},length: { in: 300..9999999 }
+  validates :price,presence:true,format:{with:/\A[0-9]+\z/}
 
 end
 
