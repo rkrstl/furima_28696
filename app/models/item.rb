@@ -36,11 +36,9 @@ belongs_to_active_hash :category
 
 # - 価格についての情報が必須であること
 # 　　半角数字であること
-  validates :price,presence:true,format:{with:/\A[0-9]+\z/}
-
 # - 価格の範囲が、¥300~¥9,999,999の間であること
- 
-  
+  validates :price,presence:true,format:{with:/\A[0-9]+\z/},length: { in: 300..9999999 }
+
 end
 
 
