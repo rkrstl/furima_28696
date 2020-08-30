@@ -1,11 +1,30 @@
 require 'rails_helper'
-describe Item,type: :model do
+RSpec.describe Item,type: :model do
    before do
      @item=FactoryBot.build(:item)
      @item.image = fixture_file_upload('IMG_4621.jpeg')
    end
  
+
+
    describe 'itemの出品' do
+      context 'itemが出品できる場合' do
+       it "入力項目が全て揃っていれば出品できる" do
+            expect(@item.image).to be_valid
+            
+         end
+         
+
+         it "価格が300から999999の間であれば出品できる" do
+             @item.price="10000"
+             expect(@item.image).to be_valid
+         end
+         it "価格が半角数字であれば出品できる"do
+             @item.price="1234"
+             expect(@item.image).to be_valid
+         end
+      end  
+     
       context 'itemが出品きない場合' do
          it "画像が一枚でもないと保存できない"do
             @item.image= nil
