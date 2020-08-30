@@ -14,6 +14,7 @@ belongs_to_active_hash :category
 
 
 # 画像は1枚必須であること(ActiveStorageを使用すること)
+  validates :image,presence:true
 # - 商品名が必須であること
   validates :name,presence: true
 
@@ -35,9 +36,9 @@ belongs_to_active_hash :category
   validates :scheduled_delivery_id,presence: true,numericality: { other_than: 1 } 
 
 # - 価格についての情報が必須であること
-# 　　半角数字であること
+# 半角数字であること
 # - 価格の範囲が、¥300~¥9,999,999の間であること
-  validates :price,presence:true,format:{with:/\A[0-9]+\z/}
+  validates :price,presence:true,format:{with:/\A[0-9]+\z/},numericality:{greater_than_or_equal_to:300,less_than_or_equal_to:999999}
 
 end
 
