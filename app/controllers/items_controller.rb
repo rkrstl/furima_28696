@@ -18,9 +18,7 @@ before_action :move_to_index,except:[:index,:show]
     end
   end
 
-  def done
-    @item_purchaser=Item.find(params[:id])
-    @item_purchaser=update()
+  
 
   private
     def item_params
