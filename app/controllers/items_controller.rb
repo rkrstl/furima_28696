@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 before_action :move_to_index,except:[:index,:show]
 
   def index
+    @items=Item.all  
   end
 
   def new
@@ -16,6 +17,10 @@ before_action :move_to_index,except:[:index,:show]
       render :new
     end
   end
+
+  def done
+    @item_purchaser=Item.find(params[:id])
+    @item_purchaser=update()
 
   private
     def item_params

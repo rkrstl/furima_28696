@@ -18,6 +18,5 @@ window.addEventListener('load', function(){
        add_tax.textContent = fee;
        profit.textContent = gains;
      }
-   });
-  
+   }); 
   })
