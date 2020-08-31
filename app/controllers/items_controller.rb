@@ -1,25 +1,29 @@
 class ItemsController < ApplicationController
 before_action :move_to_index,except:[:index,:show]
 
-  def index
-    @items=Item.all
-    # includes(:item).order("created_at DESC")
-  end
+      def index
+        @items=Item.all
+        # includes(:item).order("created_at DESC")
+      end
 
-  def new
-    @item = Item.new
-  end
+      def new
+        @item = Item.new
+      end
 
-  def create
-    @item= Item.create(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render :new
-    end
+        def create
+        @item= Item.create(item_params)
+        if @item.save
+          redirect_to root_path
+        else
+          render :new
+        end
+      end
 
-    
-  end
+      # def done
+      #   @order=Order.find(params[:id])
+      #   @order.update(user_id:current_user.id)
+      # end
+  
 
   
 
@@ -33,6 +37,6 @@ before_action :move_to_index,except:[:index,:show]
         redirect_to new_user_session_path
     end
   end  
-
-  
 end
+  
+
