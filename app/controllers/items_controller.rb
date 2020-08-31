@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
 before_action :move_to_index,except:[:index,:show]
 
   def index
-    @items=Item.all  
+    @items=Item.all
+    # includes(:item).order("created_at DESC")
   end
 
   def new
@@ -16,6 +17,8 @@ before_action :move_to_index,except:[:index,:show]
     else
       render :new
     end
+
+    
   end
 
   
