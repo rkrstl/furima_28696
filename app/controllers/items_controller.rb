@@ -19,12 +19,6 @@ before_action :move_to_index,except:[:index,:show]
         end
       end
 
-      # def done
-      #   @order=Order.find(params[:id])
-      #   @order.update(user_id:current_user.id)
-      # end
-  
-
   
 
   private
