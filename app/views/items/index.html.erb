@@ -161,7 +161,7 @@
      
 
       <%# 商品がない場合のダミー %>
-      <% if @item.present?%>
+      <% unless @items.present? %>
 
       <li class='list'>
         <%= link_to '#' do %>
@@ -179,9 +179,8 @@
           </div>
         </div>
         <%end%>
-        <% end %>
       </li>
-      
+      <%end %>
     </ul>
   </div>
   <%# //商品一覧 %>
