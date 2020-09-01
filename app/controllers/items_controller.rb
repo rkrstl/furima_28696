@@ -31,10 +31,11 @@ before_action :only_seller,only:[:edit,:destroy]
       def destroy
         item = Item.find(params[:id])
         if item.destroy
-        redirect_to root_path
+           redirect_to root_path
         else
           render :show
-      end
+        end
+     end
 
       def update
         if @item.update(item_params)
@@ -62,6 +63,7 @@ before_action :only_seller,only:[:edit,:destroy]
     end
 
     def only_seller
+      @item=Item.find(params[:id])
       unless current_user.id == @item.user_id
         redirect_to new_user_session_path
       end
