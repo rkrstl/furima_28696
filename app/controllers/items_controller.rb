@@ -18,6 +18,10 @@ before_action :move_to_index,except:[:index,:show]
         end
       end
 
+      def show
+        @item=Item.find(params[:id])
+      end
+
   
 
   private
