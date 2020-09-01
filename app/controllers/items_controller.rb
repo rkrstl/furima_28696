@@ -30,8 +30,10 @@ before_action :only_seller,only:[:edit,:destroy]
 
       def destroy
         item = Item.find(params[:id])
-        item.destroy
+        if item.destroy
         redirect_to root_path
+        else
+          render :show
       end
 
       def update
