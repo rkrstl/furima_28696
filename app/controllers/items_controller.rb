@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 before_action :move_to_index,except:[:index,:show]
 before_action :set_item, only:[:edit,:show,:update]
-before_action :only_seller,only:[:edit]
+before_action :only_seller,only:[:edit,:destroy]
 
       def index
         @items=Item.all.order("items.created_at DESC")
@@ -27,6 +27,15 @@ before_action :only_seller,only:[:edit]
       def edit
         
       end
+
+      def destroy
+        item = Item.find(params[:id])
+        if item.destroy
+           redirect_to root_path
+        else
+          render :show
+        end
+     end
 
       def update
         if @item.update(item_params)
@@ -54,6 +63,7 @@ before_action :only_seller,only:[:edit]
     end
 
     def only_seller
+      @item=Item.find(params[:id])
       unless current_user.id == @item.user_id
         redirect_to new_user_session_path
       end
