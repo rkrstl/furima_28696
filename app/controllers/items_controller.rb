@@ -69,5 +69,6 @@ before_action :only_seller,only:[:edit,:destroy]
       end
     end
 end
+
   
 
