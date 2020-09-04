@@ -9,6 +9,8 @@ class CreateDeliverAddresses < ActiveRecord::Migration[6.0]
       t.string     :address2
       t.string     :telephone,null:false
       t.timestamps
+
+      
     end
   end
 end
