@@ -9,7 +9,7 @@ validates :prefecture,presence: true
 validates :postal_code,presence: true,format: {with: /\A[0-9]{3}-[0-9]{4}\z/},numericality:{maximum:11}
 validates :city,presence: true
 validates :address1,presence: true
-validates :address2
+# validates :address2
 validates :telephone,presence: true
 
 
