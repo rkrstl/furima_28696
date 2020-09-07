@@ -62,11 +62,3 @@ describe UserOrder,type: :model do
         end
       end
    end
-
-
-
-
-
-
-
-

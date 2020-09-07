@@ -12,8 +12,6 @@ class UserOrder
   validates :telephone,presence: true,format:{ with:/\A\d{11}\z/}
 
   def save
-    # user=User.create(first_name:first_name,last_name:last_name,first_name_kana:first_name_kana,last_name_kana:last_name_kana,email:email,password:password,birth:birth)
-    # item=Item.create(user_id:user.id,name:name,text:text,)
     order = Order.create(user_id:user_id,item_id:item_id)
     DeliverAddress.create(order_id: order.id,prefecture_id: prefecture_id,postal_code: postal_code,city: city,address1: address1,address2:address2,telephone: telephone)
     
