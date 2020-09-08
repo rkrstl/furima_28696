@@ -20,6 +20,12 @@ class DeliverAddressesController < ApplicationController
   end
 
    private
+
+   def set_item
+    @item = Item.find(params[:item_id])
+   end
+
+
    def delivery_params
      params.permit(:token,:prefecture_id,:postal_code,:city,:address1,:address2,:telephone).merge(user_id: current_user.id,item_id:params[:item_id])
    end
@@ -46,4 +52,6 @@ class DeliverAddressesController < ApplicationController
       currency:'jpy'
     )
   end
+
+  
  end
