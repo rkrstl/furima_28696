@@ -52,6 +52,4 @@ class DeliverAddressesController < ApplicationController
       currency:'jpy'
     )
   end
-
-  
  end
