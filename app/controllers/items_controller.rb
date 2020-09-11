@@ -21,7 +21,8 @@ before_action :only_seller,only:[:edit,:destroy]
       end
 
       def show
-       
+        @comment = Comment.new
+        @comments = @item.comments.includes(:user)
       end
 
       def edit
