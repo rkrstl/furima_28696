@@ -17,6 +17,7 @@
 has_many :items 
 has_many :comments 
 has_many :orders 
+has_many :likes
 
 
 
@@ -39,6 +40,7 @@ has_many :orders
 belongs_to: user
 has_one :order
 has_many: comments 
+has_many :likes
 
 
 
@@ -81,3 +83,14 @@ belongs_to:item
 belongs_to :user
 belongs_to :item
 has one     :deliver_address
+
+
+#likesテーブル
+|Columns   |Type      |Options                    |
+|----------|----------|---------------------------|
+|user      |references|null:false,foreign_key:true|
+|item      |references|null:false,foreign_key:true|
+
+Association
+belongs_to :user
+belongs_to :item

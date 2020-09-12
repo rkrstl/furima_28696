@@ -21,7 +21,10 @@ before_action :only_seller,only:[:edit,:destroy]
       end
 
       def show
-       
+        @comment = Comment.new
+        @comments = @item.comments.includes(:user)
+        @likes_count = Like.where(item_id:@item.id).count
+
       end
 
       def edit
