@@ -236,3 +236,21 @@
   color:slategray ;
   border: 1px rgb(205, 202, 202) solid ;
 }
+
+
+.yellow{
+  color: #ffb340;
+}
+
+.favorite-btn {
+  
+  border: 1px solid lightblue;
+  padding:14px;
+  text-decoration: none;
+  
+}
+
+.favorite-btn a{
+  color:gray;
+}
+
