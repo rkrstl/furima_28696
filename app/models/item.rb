@@ -2,7 +2,8 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :order
   has_many :comments
-  has_one_attached :image
+  has_many_attached :images
+  mount_uploader :image, ImagesUploader
 
 extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to_active_hash :scheduled_delivery
@@ -14,7 +15,7 @@ belongs_to_active_hash :category
 
 
 # 画像は1枚必須であること(ActiveStorageを使用すること)
-  validates :image,presence:true
+  validates :images,presence:true
 # - 商品名が必須であること
   validates :name,presence: true
 

@@ -6,8 +6,12 @@
     <h2 class="name">
       <%= @item.name %>
     </h2>
+
+    <%# 投稿されてる画像の表示 %>
     <div class='item-img-content'>
-      <%= image_tag @item.image ,class:"item-box-img" %>
+    <% @item.images.each do |image|%>
+      <%= image_tag image ,class:"item-box-img",size:'100x100'%>
+      <% end %>
      
         <% if @item.order != nil %>
       <div class='sold-out'>
