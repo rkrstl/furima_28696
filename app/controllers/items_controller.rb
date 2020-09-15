@@ -51,7 +51,7 @@ before_action :only_seller,only:[:edit,:destroy]
 
   private
     def item_params
-      params.require(:item).permit(:image,:name,:text,:price,:scheduled_delivery_id,:category_id,:prefecture_id,:shipping_fee_status_id,:sales_status_id).merge(user_id: current_user.id)
+      params.require(:item).permit(:name,:text,:price,:scheduled_delivery_id,:category_id,:prefecture_id,:shipping_fee_status_id,:sales_status_id,images:[]).merge(user_id: current_user.id)
     end
  
     def move_to_index
