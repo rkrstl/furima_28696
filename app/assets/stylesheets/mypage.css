@@ -1,0 +1,63 @@
+
+
+.box1{
+  background-color: whitesmoke;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+.box2{
+  float: left;
+  width: 20%;
+  background-color:white;
+  height: 700px;
+}
+
+.left{
+  background-color: white;
+  height: 400px;
+  margin: 10px;
+ 
+ 
+}
+
+
+.box3{
+  float: left;
+  width: 80%;
+  background-color:white;
+  height: 7px;
+  
+}
+
+.user{
+ 
+  margin: 2em auto;
+  padding: 1em;
+  width: 90%;
+  border: 3px dashed #c0c0c0; /*太さ・線種・色*/
+  color: #a0a0a0; /* 文字色 */
+  background-color: #FFF; /* 背景色 */
+  border-radius: 1px; /*角の丸み*/
+}
+
+
+.user-edit{
+  margin: 80px;
+  height: 800px;
+  background-color:whitesmoke;
+  text-align: center;
+  padding: 20px;
+
+  
+}
+
+
+.title-edit{
+
+  font-size: large;
+  
+} 

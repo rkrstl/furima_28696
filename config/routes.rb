@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :likes
     resources :deliver_addresses
   end
+  resources :users
 end
