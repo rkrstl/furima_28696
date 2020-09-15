@@ -9,9 +9,11 @@
 
     <%# 投稿されてる画像の表示 %>
     <div class='item-img-content'>
+   
     <% @item.images.each do |image|%>
       <%= image_tag image.variant(resize: "400x400") ,class:"item-box-img"%>
       <% end %>
+      
      
         <% if @item.order != nil %>
       <div class='sold-out'>

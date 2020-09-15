@@ -9,12 +9,13 @@
   <%= stylesheet_link_tag 'application', media: 'all'%>
   <%= javascript_pack_tag 'application' %>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
 </head>
 
 <body>
   <%= yield %>
-<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
 </body>
 
