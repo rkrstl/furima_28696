@@ -33,6 +33,15 @@
   
 }
 
+
+.right2{
+  
+  text-align: center;
+  height: 400px;
+  margin: 100px;
+  padding: 100px;
+}
+
 .user{
  
   margin: 2em auto;
@@ -61,3 +70,8 @@
   font-size: large;
   
 } 
+
+
+.update{
+
+}

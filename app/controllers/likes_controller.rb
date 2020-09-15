@@ -13,4 +13,6 @@ class LikesController < ApplicationController
     redirect_to "/items/#{params[:item_id]}" 
     
   end
+
 end
+
