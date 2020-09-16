@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     resources :likes
     resources :deliver_addresses
   end
-  resources :users
+  resources :users do
+    member do
+      get 'listing'
+    end
+  end
 end
