@@ -11,5 +11,8 @@ Rails.application.routes.draw do
     member do
       get 'listing'
     end
+    member do
+      get 'likes'
+    end
   end
 end

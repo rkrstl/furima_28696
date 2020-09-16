@@ -15,19 +15,19 @@ class UsersController < ApplicationController
       else
         render 'edit'
       end
-
-  end
+   end
 
 
   def listing
-    # @items=Item.all.order("items.created_at DESC")
     @user = User.find(params[:id])
-    # @item=Item.find(params[:id])
   end
 
-  # def like
-  #   @likes = current_user.likes
-  # end
+
+
+  def likes
+    @user=User.find_by(id:params[:id])
+    @likes=Like.where(user_id: @user.id)
+  end
 
 
   private
