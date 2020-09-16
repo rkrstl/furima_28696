@@ -1,0 +1,54 @@
+<%= render "shared/header" %>
+
+<div class="box1">
+<%=@user.first_name%> <%=@user.last_name%> 様のマイページ
+<p><%= link_to '戻る' , user_path %></p>
+
+</div>
+
+<div class="box2">
+
+  <div class="left">
+    <ul>
+      <li class="user"><%=link_to 'ユーザー情報',edit_user_path%> </li>
+      <li class="user"><%=link_to 'お気に入り一覧', likes_user_path %></li>
+      <li class="user"><i class="fas fa-star yellow"></i>出品した商品<i class="fas fa-star yellow"></i></li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="box3">
+
+  <div class="right3">
+
+      <div class="listings">
+      商品一覧
+      </div>
+
+   
+    <% current_user.items.each do |item|%>
+    <%= link_to item_path(item.id) do %>
+   <div class="listing-box">
+
+           <div class="listing-image">
+            <%=image_tag item.images[0].variant(resize: "200x200")%>
+           </div>
+
+        <ul class="listing1 ">
+          <li class="listing-name">
+           商品名：<%= item.name %> 
+          </li>
+
+          <li class="listing-price">
+          値段：<%= item.price%>円
+          </li>
+        </ul>
+    </div>
+      <%end%>
+      <%end%>
+  
+    </div>
+  </div>
+ 

@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_one :order
   has_many :comments
   has_many_attached :images
+  has_many :likes
 
 extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to_active_hash :scheduled_delivery
