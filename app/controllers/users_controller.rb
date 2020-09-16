@@ -20,8 +20,9 @@ class UsersController < ApplicationController
 
 
   def listing
+    # @items=Item.all.order("items.created_at DESC")
     @user = User.find(params[:id])
-
+    # @item=Item.find(params[:id])
   end
 
   # def like

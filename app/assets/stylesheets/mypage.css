@@ -66,12 +66,66 @@
 
 
 .title-edit{
-
   font-size: large;
-  
 } 
 
 
-.update{
+.right3{
+ 
+  height: 700px;
+  padding: 0.5em 1em;
+  margin: 80px;
+  width: 700px;
+}
 
+.listings{
+  
+  text-align: center;
+  font-size: large;
+  height: 50px;
+  width: 800px;
+  margin: 10px;
+  background-color: whitesmoke;
+}
+
+
+.listing-box{
+   /* float: left; */
+    background-color: gold;
+    width: 700px;
+    float: left;
+    padding: 20px;
+    margin: 20px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    border: 3px dashed #c0c0c0; /*太さ・線種・色*/
+  color: #a0a0a0; /* 文字色 */
+  background-color: #FFF; /* 背景色 */
+  border-radius: 1px; /*角の丸み*/
+}
+
+.listing1{
+  padding: 20px;
+}
+
+
+
+.listing-image{
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.listing-name{
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  
+}
+
+
+.listing-price{
+  height: 50px;
+  text-align: center;
 }

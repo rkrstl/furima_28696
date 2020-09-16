@@ -2,6 +2,8 @@
 
 <div class="box1">
 <%=@user.first_name%> <%=@user.last_name%> 様のマイページ
+<p><%= link_to '戻る' , user_path %></p>
+
 </div>
 
 <div class="box2">
@@ -10,14 +12,38 @@
 <ul>
   <li class="user"><%=link_to 'ユーザー情報',edit_user_path%> </li>
   <li class="user"> お気に入り一覧</li>
-  <li class="user"> <%=link_to '出品する',listing_user_path %></li>
+  <li class="user"> <%=link_to '出品した商品',listing_user_path %></li>
 </ul>
 </div>
 </div>
 
-<div class="box3">
-  <div class="right">
-    ar
 
+<div class="box3">
+
+  <div class="right3">
+
+      <div class="listings">
+      商品一覧
+      </div>
+
+   
+    <% current_user.items.each do |item|%>
+   <div class="listing-box">
+          <div class="listing-image">
+            <%=image_tag item.images[0].variant(resize: "200x200")%>
+          </div>
+       <div class="listing1 ">
+          <p class="listing-name">
+          商品名：<%= item.name %>
+          </p>
+
+          <p class="listing-price">
+          値段：<%= item.price%>円
+          </p>
+          </div>
+    </div>
+      <%end%>
+  
+    </div>
   </div>
-</div>
+ 
