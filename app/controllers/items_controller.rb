@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :move_to_index,except:[:index,:show]
+before_action :move_to_index,except:[:index,:show, :search]
 before_action :set_item, only:[:edit,:show,:update]
 before_action :only_seller,only:[:edit,:destroy]
 
@@ -45,6 +45,10 @@ before_action :only_seller,only:[:edit,:destroy]
         else
           render :edit
         end
+      end
+
+      def search
+        @items = Item.search(params[:keyword])
       end
 
   

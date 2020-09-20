@@ -122,7 +122,7 @@
           <div class="time">
           <%=l comment.created_at%>
           </div>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <strong><%=comment.user.nickname%>：</strong>
             <%= comment.text %>
           </p>
         <% end %>
