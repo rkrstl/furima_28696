@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :comments,only:[:create]
     resources :likes
     resources :deliver_addresses
+    collection do 
+      get 'search'
+    end
   end
   resources :users do
     member do

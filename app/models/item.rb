@@ -5,6 +5,19 @@ class Item < ApplicationRecord
   has_many_attached :images
   has_many :likes
 
+
+  def self.search(search)
+    if search!= ""
+      Item.where('name Like(?)',"%#{search}%")
+
+    elsif search!=""
+    Item.where('text Like(?)',"%#{search}%")
+
+    else
+      Item.all
+    end
+  end
+
 extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to_active_hash :scheduled_delivery
 belongs_to_active_hash :prefecture
