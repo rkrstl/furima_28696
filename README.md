@@ -26,7 +26,7 @@ has_many :likes
 |Column                                | Type     | Options                        |
 |--------------------------------------|--------- |--------------------------------|
 |user                                  |references|null:false,foreign_key:true     |
-| name                                 |string    |null:false                      |
+|name                                  |string    |null:false                      |
 |text                                  |text      |null:false                      |
 |price                                 |integer   |null:false                      |
 | scheduled_delivery_id(active_hash)   | integer  | null: false                    |
